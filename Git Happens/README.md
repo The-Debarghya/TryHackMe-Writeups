@@ -49,7 +49,7 @@ e56eaa8e29b589976f33d76bc58a0c4dfb9315b1
 git show 395e087334d613d5e423cdf8f7be27196a360459
 ```
 ### Output:
-<![Output showcasing code snippet](./output.png)>
+![Output showcasing code snippet](./output.png)
 
 ### Q. Find the Super Secret Password
 ```
