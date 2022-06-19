@@ -58,6 +58,7 @@ nc -lnvp 7777
 ctrl + Z
 stty raw -echo
 !nc
+export TERM=xterm
 ```
 * Navigate to /home/rick
 * home directory contents:
