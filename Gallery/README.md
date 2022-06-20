@@ -33,8 +33,8 @@ PORT     STATE SERVICE VERSION
 Progress: 26788 / 87666 (30.56%)
 ```
 * Navigating to '/gallery' we're redirected to '/gallery/login.php'
-* Firstly we try random creds like: _admin_ and _admin_ and get the following response when we inspect with dev   tools:
-[Screenshot](./inspect.png)
+* Firstly we try random creds like: _admin_ and _admin_ and get the following response when we inspect with dev tools:<br>
+![Screenshot](./inspect.png)
 * The login page is vulnerable to SQL injection(found by observation and testing around)
 * Login to /gallery by:
 ```
@@ -96,11 +96,11 @@ assets    create_account.php  inc       plugins         uploads
 mysql -u gallery_user -p
 ```
 * We login successfully!<br>
-[Screenshot](./3.png)
+![Screenshot](./3.png)
 * Henceforth we explore the database:
-[Screenshot](./4.png)<br>
-[Screenshot](./5.png)<br>
-[Screenshot](./6.png)
+![Screenshot](./4.png)<br>
+![Screenshot](./5.png)<br>
+![Screenshot](./6.png)
 
 **Ans-a228b12a08b6527e7978cbe5d914531c**
 
@@ -108,8 +108,8 @@ mysql -u gallery_user -p
 
 * In the /var directory we find backups directory which contains mike's home backup:
 * In which we can find the sudo password for mike from .bash_history:
-[Screenshot](./7.png)
-[Screenshot](./8.png)
+![Screenshot](./7.png)
+![Screenshot](./8.png)
 * The password:
 ```
 b3stpassw0rdbr0xx
@@ -167,7 +167,7 @@ nano
 reset; sh 1>&0 2>&0
 ```
 * ctrl+R for Read File and then ctrl+X to execute commands
-[Screenshot](./9.png)
+![Screenshot](./9.png)
 * Navigate to /root and check the root.txt file
 **Ans**-
 ```
