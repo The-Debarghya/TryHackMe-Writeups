@@ -168,8 +168,8 @@ reset; sh 1>&0 2>&0
 ```
 * ctrl+R for Read File and then ctrl+X to execute commands
 ![Screenshot](./9.png)
-* Navigate to /root and check the root.txt file
-**Ans**-<br>
+* Navigate to /root and check the root.txt file<br>
+**Ans**-
 ```
 THM{ba87e0dfe5903adfa6b8b450ad7567bafde87}
 ```
