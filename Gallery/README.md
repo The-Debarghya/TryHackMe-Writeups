@@ -32,11 +32,11 @@ PORT     STATE SERVICE VERSION
 /gallery (Status: 301)
 Progress: 26788 / 87666 (30.56%)
 ```
-2a. Navigating to '/gallery' we're redirected to '/gallery/login.php'
-2b. Firstly we try random creds like: _admin_ and _admin_ and get the following response when we inspect with dev   tools:
+* Navigating to '/gallery' we're redirected to '/gallery/login.php'
+* Firstly we try random creds like: _admin_ and _admin_ and get the following response when we inspect with dev   tools:
 [Screenshot](./inspect.png)
-2c. The login page is vulnerable to SQL injection(found by observation and testing around)
-2d. Login to /gallery by:
+* The login page is vulnerable to SQL injection(found by observation and testing around)
+* Login to /gallery by:
 ```
 ' OR 1=1 #
 ```
@@ -95,11 +95,11 @@ assets    create_account.php  inc       plugins         uploads
 ```bash
 mysql -u gallery_user -p
 ```
-* We login successfully!
+* We login successfully!<br>
 [Screenshot](./3.png)
 * Henceforth we explore the database:
-[Screenshot](./4.png)
-[Screenshot](./5.png)
+[Screenshot](./4.png)<br>
+[Screenshot](./5.png)<br>
 [Screenshot](./6.png)
 
 **Ans-a228b12a08b6527e7978cbe5d914531c**
