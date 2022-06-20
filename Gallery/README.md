@@ -40,7 +40,7 @@ Progress: 26788 / 87666 (30.56%)
 ```
 ' OR 1=1 #
 ```
-in both username and password fields.
+in both username and password fields.<br>
 **Ans-Simple Image Gallery**
 
 3. What's the hash password of the admin user?
