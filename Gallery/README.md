@@ -95,11 +95,11 @@ assets    create_account.php  inc       plugins         uploads
 ```bash
 mysql -u gallery_user -p
 ```
-* We login successfully!<br>
+* We login successfully!
 ![Screenshot](./3.png)
-* Henceforth we explore the database:
-![Screenshot](./4.png)<br>
-![Screenshot](./5.png)<br>
+* Henceforth we explore the database:<br>
+![Screenshot](./4.png)
+![Screenshot](./5.png)
 ![Screenshot](./6.png)
 
 **Ans-a228b12a08b6527e7978cbe5d914531c**
