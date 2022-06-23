@@ -106,9 +106,12 @@ password: !#th3h00d
 00000080: 7d9d cfe7 f81e 5fcb 49ce ed94 7eb7 d8d7  }....._.I...~...
 00000090: 723c c9e9 7492 d3d3 494e c793 9c8f 8b2c  r<..t...IN.....,
 ```
-![Images](./Queen's_Gambit.png)
-![Images](./aa.jpg)
 * But that doesn't change the problem
+* Queen's Gambit.png:
+![Images](./Queen's_Gambit.png)
+* aa.jpg:
+![Images](./aa.jpg)
+
 * So trying on the .jpg file, we can find some hidden stuff with steghide/stegseek:
 ```bash
 → stegseek aa.jpg rockyou.txt
