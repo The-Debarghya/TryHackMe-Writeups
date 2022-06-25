@@ -40,7 +40,7 @@ OR
 ```bash
 grep . Sup3rS3cretPickl3Ingred.txt
 ```
-Ans- mr. meeseek hair
+**Ans- mr. meeseek hair**
 
 2. Whats the second ingredient Rick needs?
 
@@ -72,7 +72,7 @@ drwxr-xr-x 4 root root 4096 Feb 10  2019 ..
 ```
 cat 'second ingredients'
 ```
-Ans- 1 jerry tear
+**Ans- 1 jerry tear**
 
 3. Whats the final ingredient Rick needs?
 
@@ -94,4 +94,4 @@ sudo bash
 ```
 * Navigate to /root and find the 3rd.txt
 
-Ans- fleeb juice
+**Ans- fleeb juice**
