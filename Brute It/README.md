@@ -67,7 +67,7 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 * Next we login with those credentials and come to this page:<br>
 ![Screenshot](./3.png)
 * Download the ssh private key and extract the private key passphrase hash:
-* Using <a href="https://github.com/openwall/john/blob/bleeding-jumbo/run/ssh2john.py">ssh2john</a>
+* Using <a href="https://github.com/openwall/john/blob/bleeding-jumbo/run/ssh2john.py">ssh2john</a> to extract the ssh passphrase hash:
 ```bash
 python3 ssh2john.py id_rsa > rsa.hash
 ```
