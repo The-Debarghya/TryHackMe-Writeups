@@ -157,10 +157,26 @@ xfreerdp /u:SG /p:UmbracoIsTheBest! /v:$IP
 
 **Ans-THM{N00T_NO0T}**
 
+* In File Manager enable view hidden directories/files then navigate to C:\
+![Screenshot](./9.png)
+* In the Backup Folder there is a file *restore*
+* Check its properties and in the security tab we can see that the permissions can be changed:
+![Screenshot](./10.png)
+* Edit and add */Users* group in permissions box and grant them full permissions:
+![Screenshot](./11.png)
+![Screenshot](./12.png)
+* Finally open the restore file:
+![Screenshot](./13.png)
+
 3. Can we spot the admin password?<br>
 
-**Ans-**
+**Ans-ChangeMeBaby1MoreTime**
+
+* Navigate to *C:\\Users\\Administrator*
+* You'll be prompted for Administrator password, give the above password
+* Navigate to *C:\\Users\\Administrator\\Desktop*
+![Screenshot](./14.png)
 
 4. Escalate your privileges to root, what is the contents of root.txt?<br>
 
-**Ans-**
+**Ans-THM{Y0U_4R3_1337}**
