@@ -69,7 +69,7 @@ chatting_service()
 * Hmmm 🤔 the commands given are not directly put into quotes in the report_form function...maybe we could take advantage of it!!
 * If we put a `;` after 1st command and try to execute some other command we can find out in local machine as well:
 ![Screenshot](./assets/3.png)
-* Let's try it on the server:
+* Let's try it on the server:<br>
 ![Screenshot](./assets/5.png)
 ![Screenshot](./assets/4.png)
 * See? we get valid Remote Code Execution over the chat service...
