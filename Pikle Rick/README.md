@@ -57,7 +57,7 @@ nc -lnvp 7777
 /usr/bin/script -qc /bin/bash /dev/null
 ctrl + Z
 stty raw -echo
-!nc
+fg
 export TERM=xterm
 ```
 * Navigate to /home/rick
