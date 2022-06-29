@@ -34,7 +34,7 @@ Progress: 26788 / 87666 (30.56%)
 ```
 * Navigating to '/gallery' we're redirected to '/gallery/login.php'
 * Firstly we try random creds like: _admin_ and _admin_ and get the following response when we inspect with dev tools:<br>
-![Screenshot](./inspect.png)
+![Screenshot](./assets/inspect.png)
 * The login page is vulnerable to SQL injection(found by observation and testing around)
 * Login to /gallery by:
 ```
@@ -46,7 +46,7 @@ in both username and password fields.<br>
 3. What's the hash password of the admin user?
 
 * We navigate to this page(the my account page of the Admin):
-![Screenshot](./1.png)
+![Screenshot](./assets/1.png)
 * Try to upload PHP reverse shell code attached with project
   Since the backend is probably made on PHP(hint: login page was login.php)
 * Put a netcat listener:
@@ -54,7 +54,7 @@ in both username and password fields.<br>
 nc -lnvp 7777
 ```
 * And we get a reverse shell!
-![Screenshot](./2.png)
+![Screenshot](./assets/2.png)
 * Stabilise the shell:
 ```bash
 /usr/bin/script -qc /bin/bash /dev/null
@@ -96,11 +96,11 @@ assets    create_account.php  inc       plugins         uploads
 mysql -u gallery_user -p
 ```
 * We login successfully!
-![Screenshot](./3.png)
+![Screenshot](./assets/3.png)
 * Henceforth we explore the database:<br>
-![Screenshot](./4.png)
-![Screenshot](./5.png)
-![Screenshot](./6.png)
+![Screenshot](./assets/4.png)
+![Screenshot](./assets/5.png)
+![Screenshot](./assets/6.png)
 
 **Ans-a228b12a08b6527e7978cbe5d914531c**
 
@@ -108,8 +108,8 @@ mysql -u gallery_user -p
 
 * In the /var directory we find backups directory which contains mike's home backup:
 * In which we can find the sudo password for mike from .bash_history:
-![Screenshot](./7.png)
-![Screenshot](./8.png)
+![Screenshot](./assets/7.png)
+![Screenshot](./assets/8.png)
 * The password:
 ```
 b3stpassw0rdbr0xx
@@ -167,7 +167,7 @@ nano
 reset; sh 1>&0 2>&0
 ```
 * ctrl+R for Read File and then ctrl+X to execute commands
-![Screenshot](./9.png)
+![Screenshot](./assets/9.png)
 * Navigate to /root and check the root.txt file<br>
 **Ans**-
 ```

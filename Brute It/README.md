@@ -52,20 +52,20 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 
 * We get a login page at http://IP/admin:<br>
 
-![Screenshot](./1.png)
+![Screenshot](./assets/1.png)
 
 * Using a python script to brute force with a common wordlist(for ex: rockyou.txt)
 * While checking the source, we found some strange comments:<br>
-![Screenshot](./2.png)
+![Screenshot](./assets/2.png)
 * So, the username is probably *admin* and *john* maybe a username in the server??!🤔<br>
-![Screenshot](./4.png)
+![Screenshot](./assets/4.png)
 
 1. What is the user:password of the admin panel?<br>
 
 **Ans-admin:xavier**
 
 * Next we login with those credentials and come to this page:<br>
-![Screenshot](./3.png)
+![Screenshot](./assets/3.png)
 * Download the ssh private key and extract the private key passphrase hash:
 * Using <a href="https://github.com/openwall/john/blob/bleeding-jumbo/run/ssh2john.py">ssh2john</a> to extract the ssh passphrase hash:
 ```bash
@@ -86,7 +86,7 @@ chmod 600 id_rsa
 ssh -i id_rsa john@IP
 ```
 * Use the above password<br>
-![Screenshot](./5.png)
+![Screenshot](./assets/5.png)
 
 3. user.txt<br>
 
@@ -109,12 +109,12 @@ User john may run the following commands on bruteit:
 ```
 * Since /bin/cat is set to NOPASSWD, we can view both the root password hash from **/etc/shadow** and the flag from **/root/root.txt** too.
 
-![Screenshot](./6.png)
+![Screenshot](./assets/6.png)
 * Copy the hash and crack with *hashcat*
 ```bash
 hashcat -m1800 -a0 hash.txt rockyou.txt -O
 ```
-![Screenshot](./7.png)
+![Screenshot](./assets/7.png)
 * Escalate privileges with:
 
 ```bash

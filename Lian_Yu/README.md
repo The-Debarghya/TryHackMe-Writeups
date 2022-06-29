@@ -40,7 +40,7 @@ Service Info: OSs: Unix, Linux; CPE: cpe:/o:linux:linux_kernel
 $ gobuster -u "http://10.10.203.137/" -w directory-list-2.3-small.txt
 /island (Status: 301)
 ```
-![Screenshot](./1.png)
+![Screenshot](./assets/1.png)
 
 * Second
 ```
@@ -49,7 +49,7 @@ $ gobuster -u "http://10.10.203.137/island" -w directory-list-2.3-small.txt
 
 ```
 * Strange comments found:<br>
-![Screenshot](./2.png)
+![Screenshot](./assets/2.png)
 * Third
 ```
 $ gobuster -u "http://10.10.203.137/island/2100" -x ticket -w directory-list-2.3-small.txt
@@ -61,7 +61,7 @@ $ gobuster -u "http://10.10.203.137/island/2100" -x ticket -w directory-list-2.3
 
 3. what is the file name you found?<br>
 **Ans-green_arrow.ticket**<br>
-![Screenshot](./3.png)
+![Screenshot](./assets/3.png)
 
 4. what is the FTP Password?
 
@@ -77,7 +77,7 @@ username: vigilante
 password: !#th3h00d
 ```
 * 3 files are present in home directory:
-![Screenshot](./4.png)
+![Screenshot](./assets/4.png)
 * We get all of them, 2 of those looks ok but the *Leave_me_alone.png* was corrupted
 * Use hexedit to change the 1st bytes as follows:<br>
 *Previous*
@@ -108,9 +108,9 @@ password: !#th3h00d
 ```
 * But that doesn't change the problem
 * Queen's Gambit.png:
-![Images](./Queen's_Gambit.png)
+![Images](./assets/Queen's_Gambit.png)
 * aa.jpg:
-![Images](./aa.jpg)
+![Images](./assets/aa.jpg)
 
 * So trying on the .jpg file, we can find some hidden stuff with steghide/stegseek:
 ```bash
@@ -152,7 +152,7 @@ wild pigs and wolves.
 6. user.txt
 
 * Previously while exploring the ftp server we found the slade user other than vigilante:<br>
-![Screenshot](./5.png)
+![Screenshot](./assets/5.png)
 * I tried first with vigilante but didn't succeed.
 * SSH into server with:
 ```bash

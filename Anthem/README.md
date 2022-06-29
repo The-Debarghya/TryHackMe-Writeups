@@ -81,7 +81,7 @@ Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
 **Ans-3389**
 
 * At /robots.txt:<br>
-![Screenshot](./3.png)
+![Screenshot](./assets/3.png)
 
 4. What is a possible password in one of the pages web crawlers check for?<br>
 
@@ -96,10 +96,10 @@ Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
 **Ans-Anthem.com**
 
 * At the /archive/we-are-hiring page we find:<br>
-![Screenshot](./4.png)
+![Screenshot](./assets/4.png)
 * We see that the email domain is: *anthem.com*
 * At /archive/a-cheers-to-our-it-department/ we see this famous poem:
-![Screenshot](./6.png)
+![Screenshot](./assets/6.png)
 * Which probably indicates *Solomon Grundy*
 * Thus, the email must be: SG@anthem.com...with reference to *JD@anthem.com* for the user *Jane Doe*
 
@@ -114,28 +114,28 @@ Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
 ### Task 2(Spot the flags):
 
 * At the /archive/we-are-hiring/ page source:<br>
-![Screenshot](./2.png)
+![Screenshot](./assets/2.png)
 
 1. What is flag 1?<br>
 
 **Ans-THM{L0L_WH0_US3S_M3T4}**
 
 * At the index page source:<br>
-![Screenshot](./1.png)
+![Screenshot](./assets/1.png)
 
 2. What is flag 2?<br>
 
 **Ans-THM{G!T_G00D}**
 
 * At /authors/jane-doe/:<br>
-![Screenshot](./7.png)
+![Screenshot](./assets/7.png)
 
 3. What is flag 3?<br>
 
 **Ans-THM{L0L_WH0_D15}**
 
 * At the /archive/a-cheers-to-our-it-department/ page source:<br>
-![Screenshot](./5.png)
+![Screenshot](./assets/5.png)
 
 4. What is flag 4?<br>
 
@@ -151,22 +151,22 @@ Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
 ```bash
 xfreerdp /u:SG /p:UmbracoIsTheBest! /v:$IP
 ```
-![Screenshot](./8.png)
+![Screenshot](./assets/8.png)
 
 2. Gain initial access to the machine, what is the contents of user.txt?<br>
 
 **Ans-THM{N00T_NO0T}**
 
 * In File Manager enable view hidden directories/files then navigate to C:\
-![Screenshot](./9.png)
+![Screenshot](./assets/9.png)
 * In the Backup Folder there is a file *restore*
 * Check its properties and in the security tab we can see that the permissions can be changed:
-![Screenshot](./10.png)
+![Screenshot](./assets/10.png)
 * Edit and add */Users* group in permissions box and grant them full permissions:
-![Screenshot](./11.png)
-![Screenshot](./12.png)
+![Screenshot](./assets/11.png)
+![Screenshot](./assets/12.png)
 * Finally open the restore file:
-![Screenshot](./13.png)
+![Screenshot](./assets/13.png)
 
 3. Can we spot the admin password?<br>
 
@@ -175,7 +175,7 @@ xfreerdp /u:SG /p:UmbracoIsTheBest! /v:$IP
 * Navigate to *C:\\Users\\Administrator*
 * You'll be prompted for Administrator password, give the above password
 * Navigate to *C:\\Users\\Administrator\\Desktop*
-![Screenshot](./14.png)
+![Screenshot](./assets/14.png)
 
 4. Escalate your privileges to root, what is the contents of root.txt?<br>
 

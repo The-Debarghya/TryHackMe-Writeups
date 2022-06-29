@@ -40,7 +40,7 @@ Service Info: OSs: Unix, Linux; CPE: cpe:/o:linux:linux_kernel
 * Hmmm 🤔 FTP is running and allows *Anonymous* login
 * Let's try that first..
 * Directory listing:
-![Screenshot](./ftp.png)
+![Screenshot](./assets/ftp.png)
 * Get notice.txt, important.jpg and .test.log from the ftp server
 * .test.log seems to be useless
 * Contents of notice.txt:
@@ -51,7 +51,7 @@ Whoever is leaving these damn Among Us memes in this share, it IS NOT FUNNY. Peo
 * important.jpg looks like this:<br>
 ![Picture](./ftp_files/important.png)
 * Only thing we get in the webpage:
-![Screenshot](./http.png)
+![Screenshot](./assets/http.png)
 * Lets check gobuster for any other directories:
 
 ### GoBuster Scan Results:
@@ -65,11 +65,11 @@ Whoever is leaving these damn Among Us memes in this share, it IS NOT FUNNY. Peo
 
 ```
 * Inside /files we have:(looks like the same directory as FTP)
-![Screenshot](./http2.png)
+![Screenshot](./assets/http2.png)
 * So, we can upload a reverse shell over FTP and return back at the webpage at /files!!
-![Screenshot](./ftp2.png)
-![Screenshot](./1.png)
-![Screenshot](./2.png)
+![Screenshot](./assets/ftp2.png)
+![Screenshot](./assets/1.png)
+![Screenshot](./assets/2.png)
 
 * Stabilize the shell:
 ```bash
@@ -83,7 +83,7 @@ export TERM=xterm
 ```bash
 find / -name *.txt 2>/dev/null
 ```
-![Screenshot](./3.png)
+![Screenshot](./assets/3.png)
 * Aww!! 🥰 ❤️
 
 1. What is the secret spicy soup recipe?<br>
@@ -114,8 +114,8 @@ python3 -m http.server
 wget http://10.10.16.78:8000/suspicious.pcapng -O suspicious.pcapng
 ```
 * Follow the TCP stream to get the password:
-![Screenshot](./4.png)
-![Screenshot](./5.png)
+![Screenshot](./assets/4.png)
+![Screenshot](./assets/5.png)
 * So it turns out **c4ntg3t3n0ughsp1c3** is password for *lennie*
 * Navigate to lennie's home directory and get the user flag.
 * Hence *Maya* wasn't a valid name and notice.txt & important.jpg were also some distraction stuff!!😮‍💨😮‍💨
@@ -146,7 +146,7 @@ lennie@startup:~/Documents$
 * **find / -type f -a \( -perm -u+s -o -perm -g+s \) -exec ls -l {} \; 2> /dev/null**
 * Also doesn't find anything interesting setuid binary to exploit
 * Strange files in scripts directory:<br>
-![Screenshot](./6.png)
+![Screenshot](./assets/6.png)
 * Lets modify the */etc/print.sh* script:
 ```
 lennie@startup:~/scripts$ ls -la /etc/print.sh
@@ -154,8 +154,8 @@ lennie@startup:~/scripts$ ls -la /etc/print.sh
 lennie@startup:~/scripts$
 ```
 * Modify like this:<br>
-![Screenshot](./7.png)
-![Screenshot](./8.png)
+![Screenshot](./assets/7.png)
+![Screenshot](./assets/8.png)
 * Let it run
 * Navigate to /root and get the flag...
 
