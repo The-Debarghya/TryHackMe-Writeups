@@ -48,7 +48,7 @@ Service Info: OSs: Unix, Linux; CPE: cpe:/o:linux:linux_kernel
 Whoever is leaving these damn Among Us memes in this share, it IS NOT FUNNY. People downloading documents from our website will think we are a joke! Now I dont know who it is, but Maya is looking pretty sus.
 ```
 * Note the name **Maya**
-* important.jpg looks like this:
+* important.jpg looks like this:<br>
 ![Picture](./important.png)
 * Only thing we get in the webpage:
 ![Screenshot](./http.png)
@@ -145,7 +145,7 @@ lennie@startup:~/Documents$
 * **sudo -l** doesn't work cause we dont know the root password
 * **find / -type f -a \( -perm -u+s -o -perm -g+s \) -exec ls -l {} \; 2> /dev/null**
 * Also doesn't find anything interesting setuid binary to exploit
-* Strange files in scripts directory:
+* Strange files in scripts directory:<br>
 ![Screenshot](./6.png)
 * Lets modify the */etc/print.sh* script:
 ```
@@ -153,7 +153,7 @@ lennie@startup:~/scripts$ ls -la /etc/print.sh
 -rwx------ 1 lennie lennie 25 Nov 12  2020 /etc/print.sh
 lennie@startup:~/scripts$
 ```
-* Modify like this:
+* Modify like this:<br>
 ![Screenshot](./7.png)
 ![Screenshot](./8.png)
 * Let it run
