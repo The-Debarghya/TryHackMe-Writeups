@@ -49,7 +49,7 @@ Whoever is leaving these damn Among Us memes in this share, it IS NOT FUNNY. Peo
 ```
 * Note the name **Maya**
 * important.jpg looks like this:<br>
-![Picture](./important.png)
+![Picture](./ftp_files/important.png)
 * Only thing we get in the webpage:
 ![Screenshot](./http.png)
 * Lets check gobuster for any other directories:
