@@ -73,7 +73,7 @@ Also, please take care of the image file ;)
 - drac.
 ```
 * At this moment I have no idea what that means😮‍💨😮‍💨, anyways let's keep the statement in mind and save for later use!!
-* Let's note *john* and *drac* as usernames for possible brute force on the webpage.
+* Let's note `john` and `drac` as usernames for possible brute force on the webpage.
 * Since gobuster shows us nothing interesting, we try an all port scan on Nmap( Maybe it can find something on some other port)🤔
 ### Nmap All Port Scan Results:
 * Using `-p-` and `-Pn` switches:
@@ -82,13 +82,13 @@ Also, please take care of the image file ;)
 * And searched only for ephemeral ports:<br>
 ![Screenshot](./assets/4.png)
 * Finally we got **62337** as an open port.
-* visit the webpage: http://IP:62337/ whaich looks like this:<br>
+* visit the webpage: http://IP:62337/ which looks like this:<br>
 ![Screenshot](./assets/5.png)
-* Used a python ![script](./script.py) to login, and got success in first try with Username as **john** and password as **password**
+* Used a python [script](./script.py) to login, and got success in first try with Username as **john** and password as **password**
 * After logging in:
 ![Screenshot](./assets/6.png)
 * Searched for known exploits in <a href="https://www.exploit-db.com/">exploit-db</a> for **Codiad** and found some.
-* Used a custom ![script](./script.py) to upload a php reverse shell payload file
+* Used a custom [script](./script.py) to upload a php reverse shell payload file
 * Setup a netcat listener and run the script:<br>
 ![Screenshot](./assets/7.png)
 * Navigate to */home/drac* we see the following contents:<br>
