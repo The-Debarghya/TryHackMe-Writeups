@@ -93,7 +93,7 @@ Also, please take care of the image file ;)
 ![Screenshot](./assets/7.png)
 * Navigate to */home/drac* we see the following contents:<br>
 ![Screenshot](./assets/8.png)
-* Use the found password `Th3dRaCULa1sR3aL` it escalate privileges to **drac**
+* Use the found password `Th3dRaCULa1sR3aL` use it to escalate privileges to **drac**
 ![Screenshot](./assets/9.png)
 
 1. user.txt
