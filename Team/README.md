@@ -88,7 +88,7 @@ Service Info: OSs: Unix, Linux; CPE: cpe:/o:linux:linux_kernel
 * `sudo -l` gives the following output:<br>
 ![Screenshot](./assets/8.png)
 * So, probably we need to escalate privileges to `Gyles` then to root.
-* Carefully look at the script, the error variable is directly executed in the script itself...so we can supply `/bin/bash` and become *gyles*
+* Carefully look at the **admin_checks** script, the error variable is directly executed in the script itself...so we can supply `/bin/bash` and become *gyles*
 * Now run the script with `sudo` and supply `/bin/bash` when prompted for date:<br>
 ![Screenshot](./assets/9.png)
 * Thus we can get a barebone shell, and we can elevate the shell with:`python3 -c 'import pty; pty.spawn("/bin/bash")'`
