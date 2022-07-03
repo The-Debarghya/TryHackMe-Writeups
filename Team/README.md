@@ -77,6 +77,7 @@ Service Info: OSs: Unix, Linux; CPE: cpe:/o:linux:linux_kernel
 **Ans-THM{6Y0TXHz7c2d}**
 
 
+* Now we need to find a way to get a shell in order to become root!!🫡
 * Burp Suite made the job easy and found the list for us:<br>
 ![Screenshot](./assets/burp.png)
 * Hence we visited: `http://dev.team.thm/script.php?page=./../../../etc/ssh/sshd_config` and got a ssh private key for `Dale`:<br>
