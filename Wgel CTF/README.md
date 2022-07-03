@@ -46,7 +46,7 @@ chmod 600 id_rsa
 
 1. User flag:
 
-* In the main page we find some strange comments:
+* In the main page we find some strange comments:<br>
 ![Screenshot](./1.png)
 * Presumably one user is *Jessie*
 * SSH into the server using the private key and Jessie as the username
