@@ -34,15 +34,16 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 /index.html (Status: 301)
 ```
 * Net we tried some basic recon over the whole webpage:<br>
+* Main Page:<br>
 ![Screenshot](./assets/1.png)
-<center>Main Page</center><br>
+* Main Page Source:<br>
 ![Screenshot](./assets/3.png)
-<center>Main Page Source</center><br>
+* About Us Page:<br>
 ![Screenshot](./assets/4.png)
-<center>About Us Page</center><br>
+* Downloads Page:<br>
 ![Screenshot](./assets/2.png)
-<center>Downloads Page</center><br>
-* Here we downloaded the source code and the build script.
+
+* From here, we download the source code and the build script.
 * Only interesting thing about the source was:
 ```go
 func rot47(input string) string {}
