@@ -54,7 +54,7 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 * The `users.bak` file looked strange, it turned out to be a sqlite database file, so looking into its contents, we found:<br>
 ![Screenshot](./assets/4.png)
 * This `admin:1868e36a6d2b17d4c2745f1659433a54d4bc5f4b` looked like some login credentials!!
-* The hash was successfully cracked and the password was found to be: `bulldog19`.
+* The hash was successfully cracked from <a href="https://crackstation.net/">crackstation</a>, and the password was found to be: `bulldog19`.
 * Since gobuster also couldn't find any other directories, we initiated another nmap scan over all ports with `-p-`.
 ### Second scan Results:
 ```
