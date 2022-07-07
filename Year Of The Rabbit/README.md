@@ -1,6 +1,6 @@
 # Year Of The Rabbit
 
-* IP =
+* IP = 10.10.83.188
 
 ## Questions/Tasks:
 
@@ -25,7 +25,8 @@ PORT   STATE SERVICE VERSION
 Service Info: OSs: Unix, Linux; CPE: cpe:/o:linux:linux_kernel
 
 ```
-* Since there is a website running, next we need to enumerate the website to find any other directories/files using *gobuster*:`gobuster -u "http://IP/" -w common.txt`
+* Since there is a website running, next we need to enumerate the website to find any other directories/files using *gobuster*:<br>
+`gobuster -u "http://IP/" -w common.txt`
 
 * **GoBuster Scan Results:**
 ```
