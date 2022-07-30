@@ -98,26 +98,66 @@ Anurodh told me that there is some filtering on strings being put in the command
 
 ## Post Exploitation
 
-`netstat -anlp | grep LISTEN`
-`ssh -i id_rsa apaar@10.10.175.103 -L 9001:127.0.0.1:9001`
+* First enumerate the running processes with `ps aux` and the running webservices/network services with:`netstat -anlp | grep LISTEN`:<br>
+![Screenshot](./assets/11.png)
+* The service running on port `9001` at localhost seemd strange, hence it was port forwarded via SSH.
+* Generated a new ssh key-pair with `ssh-keygen` on local machine:<br>
+![Screenshot](./assets/12.png)
+* Copied the `id_rsa.pub` or the public key into the authorized_keys file inside `.ssh` directory of `/home/apaar`.
+* Now SSH 'ed into the server with:`ssh -i id_rsa apaar@10.10.175.103 -L 9001:127.0.0.1:9001` using forwarded port.
+* `-L` flag signifies the following:
+```
+Specifies that connections to the given TCP port or Unix socket on the local (client) host are to be forwarded to the given host and port, or Unix socket, on the remote side.
+```
+* In local machine, the process is found in the same port:<br>
+![Screenshot](./assets/13.png)<br>
+* Visited the running service on browser with `localhost:9001` which brings here:<br>
+![Screenshot](./assets/14.png)
+* This login page is vulnerable to basic SQL injection, hence logged in with:`admin' or 1=1 --`.
+* Which brings here:<br>
+![Screenshot](./assets/15.png)
+* Next, downloaded the image file:<br>
+![Screenshot](./downloads/download.jpg)<br>
+* Using `steghide extract -sf download.jpg` a zip file can be extracted, which is infact password protected. Cracked the zipfile password with:`fcrackzip -D -u -p rockyou.txt backup.zip`, and the password was found as:`pass1word`.
+* Significance of the flags:
+```
+-D -> dictionary style password search
+-u -> decompresses the file while trying a password, evades out false positives
+-p -> specify the password file
+```
+* Unzipping the zipfile reveals a source code written in php, which has a *base64* encoded password of `anurodh`:<br>
+![Screenshot](./assets/16.png)
+* Which can be decoded as:`!d0ntKn0wmYp@ssw0rd`.
 
-`admin' or 1=1 --`
-`fcrackzip -D -u -p ../../../New\ Vol\(F\)/rockyou.txt backup.zip`
-`pass1word`
-`!d0ntKn0wmYp@ssw0rd`
+## Privilege Escalation
 
+* SSH into the server as `anurodh` and password as:`!d0ntKn0wmYp@ssw0rd`.
+* The most initial enumeration reveals `anurodh` is in the `docker` group, which means anything from the filesystem can be mounted into the docker containers and run as root.
 ```
 anurodh@ubuntu:~$ id
 uid=1002(anurodh) gid=1002(anurodh) groups=1002(anurodh),999(docker)
 ```
-`docker run --rm -it --privileged -v /:/mnt alpine`
-
-
-## Privilege Escalation
+* Checked if any docker images are already present with:`docker images`. There is an `alpine` image, which can be used.
+* Easiest way to get the root flag is by mounting the whole filesystem into a docker container and navigate inside the `root` home directory by executing:`docker run --rm -it --privileged -v /:/mnt alpine`:<br>
+![Screenshot](./assets/17.png)<br>
+* The arguments signifies the following:
+```
+run -> runs the container
+--rm -> removes previously present containers using same image
+-it -> interactive shell, to get a shell inside the container
+--privileged -> keep the privileges
+-v -> specify the volume to be mounted, here / is mounted to /mnt
+```
+* The file named `proof.txt` inside the `/mnt/root` directory will contain the root flag.:<br>
+![Screenshot](./assets/18.png)
+* Another way of actually escalating privileges would be by modifying the `/etc/sudoers` file by adding the line:
 
 ```yaml
 anurodh ALL=(ALL) NOPASSWD: ALL
 ```
+* So that anyone can become root without authentication. To try this, exit out of the container and change privileges to root with: `sudo su`:<br>
+![Screenshot](./assets/19.png)
+
 
 ## Questions/Tasks:
 
