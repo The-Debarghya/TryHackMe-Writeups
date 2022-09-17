@@ -54,7 +54,7 @@ Service Info: OSs: Unix, Linux; CPE: cpe:/o:linux:linux_kernel
 * Now looking carefully into the wget output above we see a query, `hidden_directory=/WExYY2Cv-qU`.
 * Quickly we visited that directory and found only one file:<br>
 ![Screenshot](./assets/5.png)
-* Downloaded the image, it looked like this:( Go Away all you **Simps**!!)😏😏<br>
+* Downloaded the image, it looked like this:<br>
 ![Screenshot](./assets/Hot_Babe.png)
 * Anyways, next enumeration on the image with simple `strings` command revealed this:<br>
 ![Screenshot](./assets/7.png)<br>
